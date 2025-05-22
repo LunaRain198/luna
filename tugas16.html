@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Aliyah 🌟</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f4;
+      color: #000;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark {
+      background-color: #0f172a;
+      color: #fff;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    header {
+      position: relative;
+      background-color: #4a90e2;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    body.dark header {
+      background-color: #1e3a5f;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #357ABD;
+      flex-wrap: wrap;
+    }
+
+    body.dark nav {
+      background-color: #27496d;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      padding: 15px 25px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    body.dark .container {
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .halaman {
+      display: none;
+      animation: fadeZoom 0.4s ease-in-out forwards;
+    }
+
+    .aktif {
+      display: block;
+    }
+
+    @keyframes fadeZoom {
+      from {
+        opacity: 0;
+        transform: scale(0.97);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      color: #4a90e2;
+      text-align: center;
+    }
+
+    body.dark h1 {
+      color: #66ccff;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    body.dark ul li {
+      border-color: #444;
+    }
+
+    .foto-profil {
+      display: block;
+      margin: 0 auto 20px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #4a90e2;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    }
+
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* DARK MODE SWITCH */
+    .switch {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0; left: 0;
+      right: 0; bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #4a90e2;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(24px);
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+
+      .switch {
+        top: 15px;
+        right: 15px;
+        scale: 0.9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Partikel bintang -->
+  <div id="particles-js"></div>
+
+  <header>
+    Selamat Datang di Profil Aliyah Putri Fazila!
+    <label class="switch">
+      <input type="checkbox" id="darkModeToggle">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <nav>
+    <button onclick="tampilHalaman('beranda')">Beranda</button>
+    <button onclick="tampilHalaman('biodata')">Biodata</button>
+    <button onclick="tampilHalaman('kontak')">Kontak</button>
+  </nav>
+
+  <!-- Halaman Beranda -->
+  <div id="beranda" class="halaman aktif">
+    <div class="container">
+      <h1>Beranda</h1>
+      <img src="F:\aliyah putri f. XI TJKT 4\gambar/aliyah.jpeg" alt="Foto Profil" class="foto-profil">
+      <p>Halo! Ini adalah halaman depan dari profil pribadi saya. Selamat menjelajah! 😊</p>
+    </div>
+  </div>
+
+  <!-- Halaman Biodata -->
+  <div id="biodata" class="halaman">
+    <div class="container">
+      <h1>Biodata Saya</h1>
+      <ul>
+        <li><strong>Nama:</strong> Aliyah Putri Fazila</li>
+        <li><strong>Sekolah:</strong> SMK Negeri 1 Bantaeng</li>
+        <li><strong>Jurusan:</strong> Teknik Jaringan Komputer</li>
+        <li><strong>Tempat & Tanggal Lahir:</strong> Bau-Bau, 02 April 2009</li>
+        <li><strong>Jenis Kelamin:</strong> Perempuan</li>
+        <li><strong>Agama:</strong> Islam</li>
+        <li><strong>Umur:</strong> 16 Tahun</li>
+        <li><strong>Hobi:</strong> Membaca, Menggambar, Menjahit</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Halaman Kontak -->
+  <div id="kontak" class="halaman">
+    <div class="container">
+      <h1>Kontak</h1>
+      <p>Email: <a href="mailto:NightBuble03@email.com">NightBuble03@email.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/ilya_zila02009" target="_blank">@ilya_zila02009</a></p>
+    </div>
+  </div>
+
+  <!-- Script Ganti Halaman -->
+  <script>
+    function tampilHalaman(id) {
+      document.querySelectorAll('.halaman').forEach(h => h.classList.remove('aktif'));
+      document.getElementById(id).classList.add('aktif');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+  <!-- Script Particles -->
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 2, random: true },
+        move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "repulse" } }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Script Dark Mode -->
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    // Cek localStorage
+    if (localStorage.getItem("darkMode") === "true") {
+      body.classList.add("dark");
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        body.classList.add("dark");
+        localStorage.setItem("darkMode", "true");
+      } else {
+        body.classList.remove("dark");
+        localStorage.setItem("darkMode", "false");
+      }
+    });
+
+  </script>
+</body>
+</html>
